@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f5f5f5"
+    android:layoutDirection="rtl"
+    android:textDirection="rtl"
+    tools:context=".view.MainActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_appbar">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:textColor="@color/white"
+                android:fontFamily="@font/primary_bold"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="12dp"
+                android:textSize="18sp"/>
+
+            <ImageView
+                android:id="@+id/iv_main_clearTasks"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="12dp"
+                app:srcCompat="@drawable/ic_clear_all_white_24dp" />
+
+
+        </RelativeLayout>
+        
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp">
+            
+            <EditText
+                android:id="@+id/et_main_searchTask"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="40dp"
+                android:paddingTop="8dp"
+                android:textSize="14sp"
+                android:hint="@string/edit_text_hint_search"
+                android:layout_gravity="center_vertical"
+                android:paddingBottom="8dp"
+                android:background="@drawable/background_edit_text"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|start"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                app:srcCompat="@drawable/ic_search_24dp"/>
+        </FrameLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="با نگه داشتن بر روی هر وظیفه آن را ویرایش کنید"
+            android:gravity="center"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:paddingEnd="12dp"
+            android:paddingStart="12dp"
+            android:layout_marginTop="6dp"
+            android:shadowColor="@color/black"
+            android:layout_marginBottom="6dp"
+            android:background="@drawable/background_item_task"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_main_task"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:paddingBottom="4dp"
+            android:paddingTop="4dp"
+            android:clipToPadding="false"
+
+            />
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_main_addNewTask"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_plus_24dp"
+        android:layout_gravity="bottom|start"
+        android:layout_margin="32dp"
+        />
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

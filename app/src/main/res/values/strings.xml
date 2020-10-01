@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">لیست وظایف</string>
+    <string name="edit_text_hint_search">جستجو</string>
+</resources>
